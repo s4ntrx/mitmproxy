@@ -805,7 +805,7 @@ class Request(Message):
     def url(self, val: str | bytes) -> None:
         val = always_str(val, "utf-8", "surrogateescape")
         self.scheme, self.host, self.port, self.path = url.parse(val)  # type: ignore
-
+        
     @property
     def pretty_host(self) -> str:
         """
